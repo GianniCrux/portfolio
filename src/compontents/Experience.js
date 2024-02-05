@@ -8,7 +8,7 @@ import { Tab, Nav } from 'react-bootstrap';
 import certificate1 from '../images/htmlcertificate.png'
 import certificate2 from '../images/githubcertificate.png'
 import certificate3 from '../images/cloudcertificate.png'
-import certificate4 from '../images/reactcertificate.png'
+import certificate4 from '../images/reactcertificat.png'
 import { Container, Row, Col } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
 import headerImg from "../images/portfolioimg.svg";
