@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import html from '../images/html.png';
 import css from '../images/css.png';
 import javascript from '../images/javascript.png';
 import reactImage from '../images/react.png';
 import github from '../images/github.png';
-import { Tab, Nav } from 'react-bootstrap';
 import certificate1 from '../images/htmlcertificate.png'
 import certificate2 from '../images/githubcertificate.png'
 import certificate3 from '../images/cloudcertificate.png'
-import certificate4 from '../images/reactcertificate.png'
+import certificate4 from '../images/reactcertificat.png'
 import { Container, Row, Col } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
 import headerImg from "../images/portfolioimg.svg";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+
 
 const Experience = () => {
   const techs = [
@@ -91,17 +90,13 @@ const Experience = () => {
     
   ];
 
-  const [showTabs, setShowTabs] = useState(false);
 
-  const toggleTabs = () => {
-    setShowTabs(!showTabs);
-  };
 
   return (
     <section id="experience">
-    <div className={`bg-gradient ${showTabs ? 'show-tabs' : ''}`}>
+   
       <div className="container mx-auto p-4">
-        {!showTabs ? (
+  
           <Container>
           <Row>
             <Col xs={12} md={6} xl={6}>
@@ -112,7 +107,7 @@ const Experience = () => {
             <p>In this section you can view all the projects 
             i've made, all the technologies i've studied or i've worked with
             and also can view all the certificates i've earned during my carreer.</p>
-            <button className="exBtn toggle-button" onClick={toggleTabs}>Explore<ArrowRightCircle /> </button>
+  
           </div>
           </Col>
           <Col xs={12} md={6} xl={6}>
@@ -126,24 +121,11 @@ const Experience = () => {
       </Col>
       </Row>
       </Container>
-        ) : (
-          <div>
-            {/* tabs container */}
-            <Tab.Container defaultActiveKey="technologies">
-              <Nav variant="tabs" className="tabsName">
-                <Nav.Item>
-                  <Nav.Link eventKey="technologies" className="exButton" style={{color: '#121212'}}>Technologies</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="certificates" className="exButton" style={{color: '#121212'}}>Certificates</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="projects" className="exButton" style={{color: '#121212'}}>Projects</Nav.Link>
-                </Nav.Item>
-              </Nav>
 
-              <Tab.Content>
-                <Tab.Pane eventKey="technologies">
+          <div>
+          
+
+              
                   <p>These are the technologies I've worked with:</p>
                   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     {techs.map(({ id, src, title, backgroundColor }) => (
@@ -157,9 +139,9 @@ const Experience = () => {
                       </div>
                     ))}
                   </div>
-                </Tab.Pane>
+                
 
-                <Tab.Pane eventKey="certificates">
+               
                   <p>These are some of the certificates I've earned:</p>
                   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     {certificates.map(({ id, src, title, backgroundColor }) => (
@@ -173,9 +155,9 @@ const Experience = () => {
                       </div>
                     ))}
                   </div>
-                </Tab.Pane>
+                
 
-                <Tab.Pane eventKey="projects">
+             
                   <p>These are some of the projects I've worked on:</p>
                   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     {projects.map(({ id, src, title, backgroundColor }) => (
@@ -189,15 +171,13 @@ const Experience = () => {
                       </div>
                     ))}
                   </div>
-                </Tab.Pane>
-              </Tab.Content>
-            </Tab.Container>
+             
 
-            <button className="btn btn-secondary" onClick={toggleTabs}>Go Back</button>
+            
           </div>
-        )}
+        
       </div>
-    </div>
+
     </section>
   );
 };
